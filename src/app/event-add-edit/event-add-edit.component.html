@@ -1,0 +1,58 @@
+<div>
+  <form (ngSubmit)="onSubmit()" #testForm="ngForm" ngNativeValidate>
+    <div>
+      <label>Title</label>
+      <input type="text" name= "title" [(ngModel)]="events.title">
+    </div>
+
+    <div>
+      <label>Date</label>
+      <input type="date" name= "startDate" [(ngModel)]="events.startDate">
+
+      <label>Time</label>
+      <input type="time" name= "startTime" [(ngModel)]="events.startTime">
+    </div>
+    <div>
+      <label>TO</label>
+    </div>
+
+    <div>
+      <label>Date</label>
+      <input type="date" [(ngModel)]="events.endDate" name= "endDate">
+
+      <label>Time</label>
+      <input type="time" [(ngModel)]="events.endTime" name= "endTime">
+    </div>
+    <div>
+    </div>
+    <div>
+      <label>Events Details</label>
+
+    </div>
+
+    <div>
+      <label>Email</label>
+      <input type="text" [(ngModel)]="events.email" name= "email">
+    </div>
+    <div>
+      <label>Description</label>
+      <input type="text" [(ngModel)]="events.description" name= "description">
+    </div>
+
+    <div class="panel panel-default">
+      <div class="panel-heading">Guest list</div>
+      <div class="panel-body">
+        <div *ngFor="let guest of events.guestList; let i = index">
+          <input type="text" hidden [(ngModel)]="guest.id" value="{{i}}" name= "id{{i}}">
+          <input type="text" required [(ngModel)]="guest.email" name= "email{{i}}" >
+          <p *ngIf="i === (events.guestList.length - 1)" class="pull-right">
+            <span (click)="addGuest()" class="glyphicon glyphicon-plus"></span>
+          </p>
+        </div>
+      </div>
+    </div>
+  </form>
+  <button type="button" (click)="submitForm()" class="btn">Submit</button>
+  <button type="button" (click)="clearLocalStorage()" class="btn">Clear LocalStorage</button>
+  <!-- <input type="button" (click)="submitForm()" title="Submit"> -->
+</div>

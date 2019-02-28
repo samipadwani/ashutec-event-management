@@ -1,0 +1,17 @@
+Task: Create New Event and list all event in new page.
+
+Fields: 
+
+1) Title
+2) Start Date-time
+3) End Date time
+4) All Day. Type: Boolean(If true then take only date in start and end date. Other wise user has to select time)
+5) Location : Use google location api to search location.
+6) Email
+7) Description
+8) Guest List
+
+You have to store all details in local storage.
+
+Google map API:
+https://maps.googleapis.com/maps/api/place/autocomplete/json?key=AIzaSyCMdl2byZOgAEJwJXO3LeTHwHT4JQWQ7Zo&input=ahme
